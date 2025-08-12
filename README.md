@@ -109,7 +109,7 @@ a = [1, 1, 1, 1, 1, 0, 0, 0, 0, 1]  # Same label for clients in the same cluster
 
 ### Accuracy Performance Analysis
 PIFCA consistently outperforms all 11 baseline methods under highly non-IID settings (α = 0.1).  
-- **Medical datasets** (DermaMNIST, OrganAMNIST, BloodMNIST) show significant improvements, with the largest gain of **+9.80%** on OrganAMNIST.  
+- **Medical datasets** (DermaMNIST, OrganAMNIST, BloodMNIST) show significant improvements, with the largest gain of **+9.42%** on OrganAMNIST.  
 - **General image datasets** (CIFAR-10, CIFAR-100) also benefit, with accuracy increases of **+7.03%** and **+4.91%** respectively.  
 - The performance gain is attributed to **early clustering** via gradient-space search, which mitigates the negative impact of extreme label imbalance.
 
