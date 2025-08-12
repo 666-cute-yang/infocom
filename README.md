@@ -49,7 +49,7 @@ In order to evaluate clustering performance without exposing real data:
 <p align="center">
   <img src="0.1_fenbu.png" alt="Fig. 1" width="30%">
   <img src="1_fenbu.png" alt="Fig. 2" width="30%">
-  <img src="100_fenbufig3.png" alt="Fig. 3" width="30%">
+  <img src="100_fenbu.png" alt="Fig. 3" width="30%">
 </p>
 
 
