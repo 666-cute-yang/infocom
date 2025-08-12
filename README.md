@@ -14,7 +14,7 @@ PIFCA is a **Preliminary Iterative Federated Clustering Algorithm** designed to 
 - **Gradient combination search** for optimal group allocation.
 - **Scalable** to large client numbers and dynamic user participation.
 - **Plug-in** capability to enhance existing FL algorithms.
-
+![overview](mm.png)
 ---
 
 ## Datasets
