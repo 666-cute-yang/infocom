@@ -7,7 +7,10 @@ Official implementation of the paper:
 ---
 
 ## Overview
-PIFCA is a **Preliminary Iterative Federated Clustering Algorithm** designed to efficiently partition clients in federated learning under **non-IID** settings. It leverages **gradient-space search** and a **synthetic sampling dataset** to determine optimal client clusters in the early stages of training, significantly improving accuracy and communication efficiency.
+PIFCA (**Preliminary Iterative Federated Clustering Algorithm**) is designed to tackle statistical heterogeneity in federated learning by **efficiently clustering clients based on gradient-space search** in the early training stage.  
+Unlike traditional similarity-based methods that require stable gradients or fixed thresholds, PIFCA constructs a **privacy-preserving synthetic sampling dataset** and evaluates multiple client-cluster combinations via **gradient combination accuracy and entropy**.  
+Through iterative search, it locks optimal cluster assignments in a **single-step operation**, improving both **accuracy** and **communication efficiency** in highly non-IID environments.
+
 
 **Key Features:**
 - **Early clustering** using unstable gradients via synthetic sampling.
@@ -18,12 +21,25 @@ PIFCA is a **Preliminary Iterative Federated Clustering Algorithm** designed to 
 ---
 
 ## Datasets
-We use three datasets from **MedMNIST** for medical imaging experiments:
+We use three datasets from **MedMNIST** and two **CIFAR-datasets** for experiments:
 - **DermaMNIST**
 - **BloodMNIST**
 - **OrganAMNIST**
+- **CIFAR-10**
+- **CIFAR-100**
 
-Each dataset is distributed to clients using a **Dirichlet distribution** with α ∈ {0.1, 1, 100} to simulate different levels of heterogeneity.
+### Data Partitioning
+To simulate different levels of statistical heterogeneity, we partition each dataset among clients using a **Dirichlet distribution** with concentration parameter α ∈ {0.1, 1, 100}:
+- **Lower α** → stronger label imbalance (highly non-IID)
+- **Higher α** → more uniform label distribution (close to IID)
+
+### Synthetic Sampling Dataset
+In order to evaluate clustering performance without exposing real data:
+1. We **randomly sample** a small portion of images from each client's dataset.
+2. These sampled images are used as input to a **CycleGAN** model to generate a **privacy-preserving synthetic dataset**.
+3. This synthetic dataset preserves statistical characteristics of the original distribution while protecting client privacy.
+4. PIFCA uses this dataset to evaluate **accuracy** and **entropy** of different client-cluster combinations in early training rounds.
+
 
 ---
 
