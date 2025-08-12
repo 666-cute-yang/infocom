@@ -32,6 +32,13 @@ We use three datasets from **MedMNIST** and two **CIFAR-datasets** for experimen
 To simulate different levels of statistical heterogeneity, we partition each dataset among clients using a **Dirichlet distribution** with concentration parameter α ∈ {0.1, 1, 100}:
 - **Lower α** → stronger label imbalance (highly non-IID)
 - **Higher α** → more uniform label distribution (close to IID)
+```bash
+python generate_Cifar10.py  noniid - dir # for practical noniid and unbalanced scenario
+# python generate_Cifar10.py iid - - # for iid and unbalanced scenario
+# python generate_Cifar10.py iid balance - # for iid and balanced scenario
+# python generate_Cifar10.py noniid - pat # for pathological noniid and unbalanced scenario
+# python generate_Cifar10.py noniid - exdir # for Extended Dirichlet strategy
+```
 
 ### Synthetic Sampling Dataset
 In order to evaluate clustering performance without exposing real data:
