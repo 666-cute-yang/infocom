@@ -46,6 +46,11 @@ In order to evaluate clustering performance without exposing real data:
 2. These sampled images are used as input to a **CycleGAN** model to generate a **privacy-preserving synthetic dataset**.
 3. This synthetic dataset preserves statistical characteristics of the original distribution while protecting client privacy.
 4. PIFCA uses this dataset to evaluate **accuracy** and **entropy** of different client-cluster combinations in early training rounds.
+<p align="center">
+  <img src="0.1_fenbu.png" alt="Fig. 1" width="30%">
+  <img src="1_fenbu.png" alt="Fig. 2" width="30%">
+  <img src="100_fenbufig3.png" alt="Fig. 3" width="30%">
+</p>
 
 
 ---
