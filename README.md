@@ -4,7 +4,6 @@
   <img src="mm.png" alt="PIFCA Overview" width="80%">
 </p>
 
-> Official PyTorch implementation of **"PIFCA: Federated Clustering Addressing Non-IID Skew With Gradient Space Disentanglement"** (INFOCOM 2026)
 
 ## Table of Contents
 - [Overview](#overview)
