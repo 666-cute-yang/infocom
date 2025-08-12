@@ -102,7 +102,7 @@ a = [1, 1, 1, 1, 1, 0, 0, 0, 0, 1]  # Same label for clients in the same cluster
 | Dataset       | Best Baseline | PIFCA  | Gain   |
 |---------------|--------------|--------|--------|
 | DermaMNIST    | 70.42        | 74.28  | +3.86% |
-| OrganAMNIST   | 61.75        | 71.55  | +9.80% |
+| OrganAMNIST   | 62.13        | 71.55  | +9.42% |
 | BloodMNIST    | 82.90        | 87.82  | +4.92% |
 | CIFAR-10      | 44.71        | 51.74  | +7.03% |
 | CIFAR-100     | 21.84        | 26.75  | +4.91% |
