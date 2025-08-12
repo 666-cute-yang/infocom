@@ -1,11 +1,5 @@
 # PIFCA: Efficient Federated Clustering with Gradient Search Optimization for Medical Edge Networks
 
-Official implementation of the paper:  
-**"PIFCA: Federated Clustering Addressing Non-IID Skew With Gradient Space Disentanglement"**  
-[[Paper]](link-to-your-paper) | [[Project Page]](link-to-project-page)
-
----
-
 ## Overview
 PIFCA (**Preliminary Iterative Federated Clustering Algorithm**) is designed to tackle statistical heterogeneity in federated learning by **efficiently clustering clients based on gradient-space search** in the early training stage.  
 Unlike traditional similarity-based methods that require stable gradients or fixed thresholds, PIFCA constructs a **privacy-preserving synthetic sampling dataset** and evaluates multiple client-cluster combinations via **gradient combination accuracy and entropy**.  
