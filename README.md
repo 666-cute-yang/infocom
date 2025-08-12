@@ -39,6 +39,12 @@ python generate_Cifar10.py  noniid - dir # for practical noniid and unbalanced s
 # python generate_Cifar10.py noniid - pat # for pathological noniid and unbalanced scenario
 # python generate_Cifar10.py noniid - exdir # for Extended Dirichlet strategy
 ```
+The following shows the data distribution of five users under different Dirichlet coefficients.
+<p align="center">
+  <img src="0.1_fenbu.png" alt="α = 0.1" width="30%">
+  <img src="1_fenbu.png" alt="α = 1" width="30%">
+  <img src="100_fenbu.png" alt="α = 100" width="30%">
+</p>
 
 ### Synthetic Sampling Dataset
 In order to evaluate clustering performance without exposing real data:
@@ -46,12 +52,8 @@ In order to evaluate clustering performance without exposing real data:
 2. These sampled images are used as input to a **CycleGAN** model to generate a **privacy-preserving synthetic dataset**.
 3. This synthetic dataset preserves statistical characteristics of the original distribution while protecting client privacy.
 4. PIFCA uses this dataset to evaluate **accuracy** and **entropy** of different client-cluster combinations in early training rounds.
-<p align="center">
-  <img src="0.1_fenbu.png" alt="Fig. 1" width="30%">
-  <img src="1_fenbu.png" alt="Fig. 2" width="30%">
-  <img src="100_fenbu.png" alt="Fig. 3" width="30%">
-</p>
-
+![Sampling VS. Original Distribution. Partial biased
+sampling retains true distribution information](fenbu.png)
 
 ---
 
