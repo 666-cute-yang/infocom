@@ -95,23 +95,10 @@ a = [1, 1, 1, 1, 1, 0, 0, 0, 0, 1]  # Same label for clients in the same cluster
 |:------------------------:|:--------------------:|:-------------------------:|
 | Cifar100 α = 0.1                  | Cifar100 α = 1                | Cifar100 α = 100                   |
 
-| ![α = 0.1](or0.1_01.png) | ![α = 1](De_01.png) | ![α = 100](Cifar10_0.1_01.png) |
+| ![α = 0.1](or0.1_01.png) | ![α = 1](De0.1_01.png) | ![α = 100](Cifar10_0.1_01.png) |
 |:------------------------:|:--------------------:|:-------------------------:|
 | OrganAMNIST α = 0.1                  | DermaMNIST α = 1                | Cifar-10 α = 100                   |
 
-### Accuracy under α=0.1 (Highly Non-IID)
-| Dataset       | Best Baseline | PIFCA  | Gain   |
-|---------------|--------------|--------|--------|
-| DermaMNIST    | 70.42        | 74.28  | +3.86% |
-| OrganAMNIST   | 61.75        | 71.55  | +9.80% |
-| BloodMNIST    | 82.90        | 87.82  | +4.92% |
-| CIFAR-10      | 44.71        | 51.74  | +7.03% |
-| CIFAR-100     | 21.84        | 26.75  | +4.91% |
-
-### Communication Rounds to Reach 75% of Max Accuracy
-PIFCA reduces required rounds by **29.9%** on average compared to baselines.
-
----
 
 
 
