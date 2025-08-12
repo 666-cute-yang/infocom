@@ -52,8 +52,9 @@ In order to evaluate clustering performance without exposing real data:
 3. This synthetic dataset preserves statistical characteristics of the original distribution while protecting client privacy.
 4. PIFCA uses this dataset to evaluate **accuracy** and **entropy** of different client-cluster combinations in early training rounds.
 ![Sampling VS. Original Distribution. Partial biased
-sampling retains true distribution information](fenbu.png)<br>Sampling VS. Original Distribution. Partial biased
-sampling retains true distribution information
+sampling retains true distribution information](fenbu.png)<br><p align="center">Sampling VS. Original Distribution. Partial biased
+sampling retains true distribution information.</p>
+
 
 
 ## Installation
