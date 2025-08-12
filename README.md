@@ -1,4 +1,4 @@
-# 🔥🔥🔥 PIFCA: Efficient Federated Clustering with Gradient Search Optimization for Medical Edge Networks
+# PIFCA: Efficient Federated Clustering with Gradient Search Optimization for Medical Edge Networks 🔥🔥🔥
 
 <p align="center">
   <img src="mm.png" alt="PIFCA Overview" width="80%">
@@ -13,7 +13,7 @@
 - [Results](#results)
 - [Acknowledgements](#acknowledgements)
 
-## Overview
+## Overview 📖📖📖
 PIFCA (**Preliminary Iterative Federated Clustering Algorithm**) addresses **statistical heterogeneity** in federated learning by clustering clients early in training using **gradient-space search**.
 Unlike traditional similarity-based methods that require stable gradients or fixed thresholds, PIFCA constructs a **privacy-preserving synthetic sampling dataset** and evaluates multiple client-cluster combinations via **gradient combination accuracy and entropy**.
 Through iterative search, it locks optimal cluster assignments in a **single-step operation**, improving both **accuracy** and **communication efficiency** in highly non-IID environments.
@@ -26,7 +26,7 @@ Through iterative search, it locks optimal cluster assignments in a **single-ste
 
 ---
 
-## Datasets
+## Datasets 📊📊📊
 We use three datasets from **MedMNIST** and two **CIFAR datasets** for experiments:
 - **DermaMNIST**
 - **BloodMNIST**
@@ -57,7 +57,7 @@ To evaluate clustering performance without exposing real data:
 
 ---
 
-## Running Experiments
+## Running Experiments 🧪🧪🧪
 
 ### PIFCA
 ```bash
@@ -85,7 +85,7 @@ a = [1, 1, 1, 1, 1, 0, 0, 0, 0, 1]  # Same label for clients in the same cluster
 
 ---
 
-## Results
+## Results 🏆🏆🏆
 
 | ![α = 0.1](Blood0.1_01.png) | ![α = 1](Blood1_01.png) | ![α = 100](Blood100_01.png) |
 |:------------------------:|:--------------------:|:-------------------------:|
@@ -118,7 +118,7 @@ These results highlight PIFCA’s **robustness** and **adaptability** in heterog
 
 ---
 
-## Acknowledgements
+## Acknowledgements 🙏🙏🙏
 - Code framework adapted from [PFLlib](https://www.pfllib.com/docs.html)
 - Dataset source: [MedMNIST](https://medmnist.com/)
 
