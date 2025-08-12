@@ -53,7 +53,12 @@ In order to evaluate clustering performance without exposing real data:
 4. PIFCA uses this dataset to evaluate **accuracy** and **entropy** of different client-cluster combinations in early training rounds.
 ![Sampling VS. Original Distribution. Partial biased
 sampling retains true distribution information](fenbu.png)
-
+<p align="center">
+  <figure>
+    <img src="fenbu.png" width="70%"><br>Sampling VS. Original Distribution. Partial biased
+sampling retains true distribution information
+  </figure>
+</p>
 ---
 
 ## Installation
