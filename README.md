@@ -104,18 +104,7 @@ PIFCA reduces required rounds by **29.9%** on average compared to baselines.
 
 ---
 
-## Citation
-If you use this code, please cite:
-```bibtex
-@article{pifca2025,
-  title={PIFCA: Federated Clustering Addressing Non-IID Skew With Gradient Space Disentanglement},
-  author={Your Name and Others},
-  journal={IEEE INFOCOM},
-  year={2026}
-}
-```
 
----
 
 ## Acknowledgements
 - Code framework adapted from [PFLlib](https://www.pfllib.com/docs.html)
