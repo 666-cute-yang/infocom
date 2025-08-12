@@ -87,7 +87,7 @@ a = [1, 1, 1, 1, 1, 0, 0, 0, 0, 1]  # Same label for clients in the same cluster
 ---
 
 ## Results
-| ![α = 0.1](Blood0.1.pdf) | ![α = 1](Blood1.pdf) | ![α = 100](Blood100.pdf) |
+| ![α = 0.1](Blood0.1.png) | ![α = 1](Blood1.png) | ![α = 100](Blood100.png) |
 |:------------------------:|:--------------------:|:-------------------------:|
 | α = 0.1                  | α = 1                | α = 100                   |
 ### Accuracy under α=0.1 (Highly Non-IID)
