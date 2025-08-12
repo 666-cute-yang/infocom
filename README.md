@@ -89,7 +89,7 @@ a = [1, 1, 1, 1, 1, 0, 0, 0, 0, 1]  # Same label for clients in the same cluster
 ## Results
 | ![α = 0.1](Blood0.1_01.png) | ![α = 1](Blood1_01.png) | ![α = 100](Blood100_01.png) |
 |:------------------------:|:--------------------:|:-------------------------:|
-| α = 0.1                  | α = 1                | α = 100                   |
+| BloodMNIST α = 0.1                  | BloodMNIST α = 1                | BloodMNIST α = 100                   |
 ### Accuracy under α=0.1 (Highly Non-IID)
 | Dataset       | Best Baseline | PIFCA  | Gain   |
 |---------------|--------------|--------|--------|
