@@ -56,17 +56,6 @@ sampling retains true distribution information](fenbu.png)<br><p align="center">
 sampling retains true distribution information.</p>
 
 
-
-## Installation
-
-```bash
-git clone https://github.com/Network-Optimization/PIFCA.git
-cd PIFCA
-conda create -n pifca python=3.8
-conda activate pifca
-pip install -r requirements.txt
-```
-
 ---
 
 ## Running Experiments
@@ -98,7 +87,9 @@ a = [1, 1, 1, 1, 1, 0, 0, 0, 0, 1]  # Same label for clients in the same cluster
 ---
 
 ## Results
-
+| ![α = 0.1](Blood0.1.pdf) | ![α = 1](Blood1.pdf) | ![α = 100](Blood100.pdf) |
+|:------------------------:|:--------------------:|:-------------------------:|
+| α = 0.1                  | α = 1                | α = 100                   |
 ### Accuracy under α=0.1 (Highly Non-IID)
 | Dataset       | Best Baseline | PIFCA  | Gain   |
 |---------------|--------------|--------|--------|
