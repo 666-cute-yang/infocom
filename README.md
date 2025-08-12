@@ -1,21 +1,33 @@
-# PIFCA: Efficient Federated Clustering with Gradient Search Optimization for Medical Edge Networks
+# 🔥🔥🔥 PIFCA: Efficient Federated Clustering with Gradient Search Optimization for Medical Edge Networks
+
+<p align="center">
+  <img src="mm.png" alt="PIFCA Overview" width="80%">
+</p>
+
+> Official PyTorch implementation of **"PIFCA: Federated Clustering Addressing Non-IID Skew With Gradient Space Disentanglement"** (INFOCOM 2026)
+
+## Table of Contents
+- [Overview](#overview)
+- [Datasets](#datasets)
+- [Running Experiments](#running-experiments)
+- [Results](#results)
+- [Acknowledgements](#acknowledgements)
 
 ## Overview
-PIFCA (**Preliminary Iterative Federated Clustering Algorithm**) is designed to tackle statistical heterogeneity in federated learning by **efficiently clustering clients based on gradient-space search** in the early training stage.  
-Unlike traditional similarity-based methods that require stable gradients or fixed thresholds, PIFCA constructs a **privacy-preserving synthetic sampling dataset** and evaluates multiple client-cluster combinations via **gradient combination accuracy and entropy**.  
+PIFCA (**Preliminary Iterative Federated Clustering Algorithm**) addresses **statistical heterogeneity** in federated learning by clustering clients early in training using **gradient-space search**.
+Unlike traditional similarity-based methods that require stable gradients or fixed thresholds, PIFCA constructs a **privacy-preserving synthetic sampling dataset** and evaluates multiple client-cluster combinations via **gradient combination accuracy and entropy**.
 Through iterative search, it locks optimal cluster assignments in a **single-step operation**, improving both **accuracy** and **communication efficiency** in highly non-IID environments.
 
-
 **Key Features:**
-- **Early clustering** using unstable gradients via synthetic sampling.
-- **Gradient combination search** for optimal group allocation.
-- **Scalable** to large client numbers and dynamic user participation.
-- **Plug-in** capability to enhance existing FL algorithms.
-![overview](mm.png)
+- Early clustering using unstable gradients via synthetic sampling.
+- Gradient combination search for optimal group allocation.
+- Scalable to large client numbers and dynamic user participation.
+- Plug-in capability to enhance existing FL algorithms.
+
 ---
 
 ## Datasets
-We use three datasets from **MedMNIST** and two **CIFAR-datasets** for experiments:
+We use three datasets from **MedMNIST** and two **CIFAR datasets** for experiments:
 - **DermaMNIST**
 - **BloodMNIST**
 - **OrganAMNIST**
@@ -23,32 +35,25 @@ We use three datasets from **MedMNIST** and two **CIFAR-datasets** for experimen
 - **CIFAR-100**
 
 ### Data Partitioning
-To simulate different levels of statistical heterogeneity, we partition each dataset among clients using a **Dirichlet distribution** with concentration parameter α ∈ {0.1, 1, 100}:
-- **Lower α** → stronger label imbalance (highly non-IID)
-- **Higher α** → more uniform label distribution (close to IID)
-```bash
-python generate_Cifar10.py  noniid - dir # for practical noniid and unbalanced scenario
-# python generate_Cifar10.py iid - - # for iid and unbalanced scenario
-# python generate_Cifar10.py iid balance - # for iid and balanced scenario
-# python generate_Cifar10.py noniid - pat # for pathological noniid and unbalanced scenario
-# python generate_Cifar10.py noniid - exdir # for Extended Dirichlet strategy
-```
-The following shows the data distribution of five users under different Dirichlet coefficients.
+We partition datasets among clients using a **Dirichlet distribution** (α = 0.1, 1, 100):
+
 | ![α = 0.1](0.1_fenbu.png) | ![α = 1](1_fenbu.png) | ![α = 100](100_fenbu.png) |
 |:------------------------:|:--------------------:|:-------------------------:|
 | α = 0.1                  | α = 1                | α = 100                   |
 
+<p align="center">Data distribution of five clients under different Dirichlet coefficients.</p>
 
 ### Synthetic Sampling Dataset
-In order to evaluate clustering performance without exposing real data:
-1. We **randomly sample** a small portion of images from each client's dataset.
-2. These sampled images are used as input to a **CycleGAN** model to generate a **privacy-preserving synthetic dataset**.
-3. This synthetic dataset preserves statistical characteristics of the original distribution while protecting client privacy.
-4. PIFCA uses this dataset to evaluate **accuracy** and **entropy** of different client-cluster combinations in early training rounds.
-![Sampling VS. Original Distribution. Partial biased
-sampling retains true distribution information](fenbu.png)<br><p align="center">Sampling VS. Original Distribution. Partial biased
-sampling retains true distribution information.</p>
+To evaluate clustering performance without exposing real data:
+1. **Randomly sample** a portion of images from each client.
+2. Use **CycleGAN** to generate a **synthetic dataset**.
+3. Preserve statistical patterns while protecting privacy.
+4. Use the synthetic dataset to evaluate **accuracy** and **entropy** in early rounds.
 
+<p align="center">
+  <img src="fenbu.png" alt="Sampling vs Original Distribution" width="70%"><br>
+  Sampling vs. Original Distribution — partial biased sampling retains true distribution information.
+</p>
 
 ---
 
@@ -81,17 +86,18 @@ a = [1, 1, 1, 1, 1, 0, 0, 0, 0, 1]  # Same label for clients in the same cluster
 ---
 
 ## Results
+
 | ![α = 0.1](Blood0.1_01.png) | ![α = 1](Blood1_01.png) | ![α = 100](Blood100_01.png) |
 |:------------------------:|:--------------------:|:-------------------------:|
-| BloodMNIST α = 0.1                  | BloodMNIST α = 1                | BloodMNIST α = 100                   |
+| BloodMNIST α = 0.1        | BloodMNIST α = 1     | BloodMNIST α = 100         |
 
 | ![α = 0.1](Cifar100_0.1_01.png) | ![α = 1](Cifar100_1_01.png) | ![α = 100](Cifar100_100_01.png) |
 |:------------------------:|:--------------------:|:-------------------------:|
-| Cifar-100 α = 0.1                  | Cifar-100 α = 1                | Cifar-100 α = 100                   |
+| Cifar-100 α = 0.1         | Cifar-100 α = 1      | Cifar-100 α = 100          |
 
 | ![α = 0.1](or0.1_01.png) | ![α = 1](De0.1_01.png) | ![α = 100](Cifar10_0.1_01.png) |
 |:------------------------:|:--------------------:|:-------------------------:|
-| OrganAMNIST α = 0.1                  | DermaMNIST α = 1                | Cifar-10 α = 100                   |
+| OrganAMNIST α = 0.1       | DermaMNIST α = 1     | Cifar-10 α = 100           |
 
 ### Accuracy under α = 0.1 (Highly Non-IID)
 | Dataset       | Best Baseline | PIFCA  | Gain   |
@@ -110,6 +116,7 @@ PIFCA consistently outperforms all 11 baseline methods under highly non-IID sett
 
 These results highlight PIFCA’s **robustness** and **adaptability** in heterogeneous federated learning environments, especially when client data distributions are highly skewed.
 
+---
 
 ## Acknowledgements
 - Code framework adapted from [PFLlib](https://www.pfllib.com/docs.html)
