@@ -40,11 +40,10 @@ python generate_Cifar10.py  noniid - dir # for practical noniid and unbalanced s
 # python generate_Cifar10.py noniid - exdir # for Extended Dirichlet strategy
 ```
 The following shows the data distribution of five users under different Dirichlet coefficients.
-<p align="center">
-  <img src="0.1_fenbu.png" alt="α = 0.1" width="30%">
-  <img src="1_fenbu.png" alt="α = 1" width="30%">
-  <img src="100_fenbu.png" alt="α = 100" width="30%">
-</p>
+| ![α = 0.1](0.1_fenbu.png) | ![α = 1](1_fenbu.png) | ![α = 100](100_fenbu.png) |
+|:------------------------:|:--------------------:|:-------------------------:|
+| α = 0.1                  | α = 1                | α = 100                   |
+
 
 ### Synthetic Sampling Dataset
 In order to evaluate clustering performance without exposing real data:
